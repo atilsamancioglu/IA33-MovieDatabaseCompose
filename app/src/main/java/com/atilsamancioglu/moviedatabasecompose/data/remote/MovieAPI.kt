@@ -8,13 +8,13 @@ import retrofit2.http.Query
 
 interface MovieAPI {
 
-    @GET("")
+    @GET(".")
     suspend fun getMovies(
         @Query("s") searchString :String,
         @Query("apikey") apiKey :String = API_KEY
     ) : MoviesDto
 
-    @GET("")
+    @GET(".")
     suspend fun getMovieDetail(
         @Query("i") imdbId : String,
         @Query("apikey") apiKey: String = API_KEY
