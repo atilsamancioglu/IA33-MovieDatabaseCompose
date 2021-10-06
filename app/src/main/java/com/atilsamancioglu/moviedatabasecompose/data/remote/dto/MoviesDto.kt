@@ -8,11 +8,6 @@ data class MoviesDto(
     val totalResults: String
 )
 
-fun MoviesDto.toMovie() : Movie {
-    return Movie(
-        Poster = Search[0].Poster,
-        Title = Search[0].Title,
-        Year = Search[0].Year,
-        imdbID = Search[0].imdbID
-    )
+fun MoviesDto.toMovieList() :List<Movie> {
+    return Search.map { search -> Movie(search.Poster,search.Title,search.Year,search.imdbID) }
 }
