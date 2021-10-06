@@ -34,7 +34,7 @@ fun MovieScreen(
 
     val state = viewModel.state.value
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().background(Color.Black)) {
 
         Column() {
             MovieSearchBar(modifier = Modifier

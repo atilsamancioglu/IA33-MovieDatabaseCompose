@@ -1,6 +1,7 @@
 package com.atilsamancioglu.moviedatabasecompose.presentation.movie_detail.views
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
@@ -12,6 +13,7 @@ import androidx.compose.ui.Alignment.Companion.CenterEnd
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -25,7 +27,9 @@ fun MovieDetailScreen(
 ) {
     val state = movieDetailViewModel.state.value
 
-    Box(modifier = Modifier.fillMaxSize(),contentAlignment = Center) {
+    Box(modifier = Modifier.fillMaxSize()
+        .background(Color.Black)
+        ,contentAlignment = Center) {
         state.movie?.let {
             Column(
                 verticalArrangement = Arrangement.Center,
@@ -42,32 +46,38 @@ fun MovieDetailScreen(
 
                 Text(text = it.Title,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(14.dp)
+                    modifier = Modifier.padding(14.dp),
+                    color = Color.White
                 )
 
                 Text(text = it.Year,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(14.dp)
+                    modifier = Modifier.padding(14.dp),
+                    color = Color.White
                 )
 
                 Text(text = it.Actors,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(14.dp)
+                    modifier = Modifier.padding(14.dp),
+                    color = Color.White
                 )
 
                 Text(text = it.Country,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(14.dp)
+                    modifier = Modifier.padding(14.dp),
+                    color = Color.White
                 )
 
                 Text(text = "Director: ${it.Director}",
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(14.dp)
+                    modifier = Modifier.padding(14.dp),
+                    color = Color.White
                 )
 
                 Text(text = "IMDB Rating: ${it.imdbRating}",
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(14.dp)
+                    modifier = Modifier.padding(14.dp),
+                    color = Color.White
                 )
 
             }

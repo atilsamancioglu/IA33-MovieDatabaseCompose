@@ -14,12 +14,15 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color.Companion.Gray
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.atilsamancioglu.moviedatabasecompose.domain.model.Movie
+import org.intellij.lang.annotations.JdkConstants
 
 @Composable
 fun MovieListRow(
@@ -42,15 +45,19 @@ fun MovieListRow(
                 .clip(RectangleShape)
         )
 
-        Column(modifier = Modifier.align(CenterVertically)) {
+        Column(modifier = Modifier.align(CenterVertically),horizontalAlignment = Alignment.CenterHorizontally) {
             Text(movie.Title,
                 style = MaterialTheme.typography.h5,
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                color = White,
+                textAlign = TextAlign.Center
             )
 
             Text(movie.Year,
                 style = MaterialTheme.typography.h6,
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                color = White,
+                textAlign = TextAlign.Center
             )
 
         }
